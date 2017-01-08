@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/mik4el/gadget-eddystone-scanner#readme",
   "dependencies": {
-    "eddystone-beacon": "^1.0.7"
+    "eddystone-beacon": "^1.0.7",
+    "eddystone-beacon-scanner": "^3.0.0"
   }
 }
