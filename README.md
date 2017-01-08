@@ -6,7 +6,7 @@ Requires python <3.0. See further requirements on https://github.com/sandeepmist
 
 1. `npm install`
 1. Export credentials as environment variables
-1. `node node scan_and_post_eddystone_beacons.js`
+1. `node scan_and_post_eddystone_beacons.js`
 
 ## Debugging
 * Scan for eddystone beacons: `node scan_eddystone_beacons.js`
