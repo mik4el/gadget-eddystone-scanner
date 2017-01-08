@@ -1,0 +1,22 @@
+{
+  "name": "gadget-eddystone-scanner",
+  "version": "1.0.0",
+  "description": "Scan nearby eddystone beacons with TLM frames and upload to web service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mik4el/gadget-eddystone-scanner.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mik4el/gadget-eddystone-scanner/issues"
+  },
+  "homepage": "https://github.com/mik4el/gadget-eddystone-scanner#readme",
+  "dependencies": {
+    "eddystone-beacon": "^1.0.7"
+  }
+}
