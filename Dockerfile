@@ -12,3 +12,4 @@ WORKDIR /usr/src/app
 COPY package.json /usr/src/app/
 RUN DEBIAN_FRONTEND=noninteractive JOBS=MAX npm install --unsafe-perm
 COPY . /usr/src/app/
+
