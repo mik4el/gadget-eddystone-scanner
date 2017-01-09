@@ -9,5 +9,6 @@ RUN apt-get update && apt-get install -y \
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-ONBUILD COPY package.json /usr/src/app/
-ONBUILD RUN DEBIAN_FRONTEND=noninteractive JOBS=MAX npm install --unsafe-perm
+COPY package.json /usr/src/app/
+RUN DEBIAN_FRONTEND=noninteractive JOBS=MAX npm install --unsafe-perm
+COPY . /usr/src/app/
