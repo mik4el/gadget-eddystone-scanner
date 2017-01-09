@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  eddystone-scanner:
+    restart: always
+    build: .
+    env_file: .env
+    command: npm start
+    volumes:
+      - .:/usr/src/app/
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1M"
+        max-file: "1"
