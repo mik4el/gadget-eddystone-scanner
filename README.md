@@ -3,7 +3,7 @@ Use a raspberry pi 3 to scan nearby eddystone beacons with TLM frames and upload
 
 ## To run on raspi
 1. Install docker and docker-compose on raspberry pi 3
-1. Clone repo
+1. Clone repo and make local copy `.env` of `.env.sample`
 1. `docker-compose up`
 
 ## To run development environment
