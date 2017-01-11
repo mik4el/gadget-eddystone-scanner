@@ -17,26 +17,32 @@ EddystoneBeaconScanner.on('lost', function(beacon) {
 });
 
 var token = null;
+var last_token_sent_at = 0;
 
 function postBeaconToWebService(beacon) {
 	if (token === null) {
 		console.log("No token...");
 		return
 	} 
+
+	if (Date.getTime() - last_token_sent_at > 1000) {
+		var date = new Date();
+		gadget_slug = "eddystone-scanner";
+	    post_url = process.env.GADGET_DATA_POSTER_URL + '/backend/api/v1/gadgets/' + gadget_slug + '/data/';
+	    payload = {
+	        'data': beacon,
+	        'timestamp': date.toISOString()
+	    };
+	    var options = {
+			url: post_url,
+			method: "POST",
+	    	json: payload,
+	    	headers: { 'Authorization': 'Bearer ' + token }
+		};
+		request(options, postBeaconToWebServiceCallback);	
+		last_token_sent_at = date.getTime();
+	}
 	
-	gadget_slug = "eddystone-scanner"
-    post_url = process.env.GADGET_DATA_POSTER_URL + '/backend/api/v1/gadgets/' + gadget_slug + '/data/'
-    payload = {
-        'data': beacon,
-        'timestamp': '2017-01-08T00:00:00'
-    }
-    var options = {
-		url: post_url,
-		method: "POST",
-    	json: payload,
-    	headers: { 'Authorization': 'Bearer ' + token }
-	};
-	request(options, postBeaconToWebServiceCallback);
 }
 
 function postBeaconToWebServiceCallback(error, response, body) {
