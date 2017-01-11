@@ -24,14 +24,14 @@ function postBeaconToWebService(beacon) {
 		console.log("No token...");
 		return
 	} 
-
-	if (Date.getTime() - last_token_sent_at > 1000) {
-		var date = new Date();
+	var now = new Date();
+	if (now.getTime() - last_token_sent_at > 1000) {
+		var then = new Date();
 		gadget_slug = "eddystone-scanner";
 	    post_url = process.env.GADGET_DATA_POSTER_URL + '/backend/api/v1/gadgets/' + gadget_slug + '/data/';
 	    payload = {
 	        'data': beacon,
-	        'timestamp': date.toISOString()
+	        'timestamp': then.toISOString()
 	    };
 	    var options = {
 			url: post_url,
@@ -40,7 +40,7 @@ function postBeaconToWebService(beacon) {
 	    	headers: { 'Authorization': 'Bearer ' + token }
 		};
 		request(options, postBeaconToWebServiceCallback);	
-		last_token_sent_at = date.getTime();
+		last_token_sent_at = then.getTime();
 	}
 	
 }
