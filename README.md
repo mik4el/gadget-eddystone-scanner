@@ -1,4 +1,6 @@
 # gadget-eddystone-scanner
+NOTE: This is currently not working due to version mismatches in eddystone-beacon and latest docker images.
+
 Use a raspberry pi 3 to scan nearby eddystone beacons with TLM frames and upload to web service. Based on https://github.com/sandeepmistry/node-eddystone-beacon-scanner/.
 
 ## To run on raspi
