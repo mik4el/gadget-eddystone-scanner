@@ -1,6 +1,10 @@
-FROM resin/raspberrypi3-node:5.7.1
+FROM balenalib/raspberrypi3-node:8.16.0
 
 RUN apt-get update && apt-get install -y \
+  .gyp \
+  python \
+  make \
+  g++ \
   bluetooth \
   bluez \
   libbluetooth-dev \
