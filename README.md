@@ -1,6 +1,4 @@
 # gadget-eddystone-scanner
-NOTE: This is currently not working due to version mismatches in eddystone-beacon and latest docker images.
-
 Use a raspberry pi 3 to scan nearby eddystone beacons with TLM frames and upload to web service. Based on https://github.com/sandeepmistry/node-eddystone-beacon-scanner/.
 
 ## To run on raspi
@@ -9,7 +7,7 @@ Use a raspberry pi 3 to scan nearby eddystone beacons with TLM frames and upload
 1. `docker-compose up`
 
 ## To run development environment
-Requires python <3.0. See further requirements on https://github.com/sandeepmistry/noble
+Requires python <3.0 and node <9 to work on OSX 10.13. See further requirements on https://github.com/sandeepmistry/noble
 
 1. `npm install`
 1. Export credentials as environment variables
