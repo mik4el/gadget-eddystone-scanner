@@ -46,7 +46,6 @@ function postBeaconToWebService(beacon) {
 }
 
 function postBeaconToWebServiceCallback(error, response, body) {
-	console.log(error, response, body);
 	if (!error && response.statusCode == 201) {
 		console.log("Beacon posted...");
 	} else {
