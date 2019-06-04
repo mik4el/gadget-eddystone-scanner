@@ -21,7 +21,7 @@ var last_token_sent_at = 0;
 
 setTimeout(function () {
 	console.log('Kill after 60s...'); 
-	process.kill(process.pid, 'SIGTERM');
+	process.exit(1);
 }, 60*1000); 
 
 function postBeaconToWebService(beacon) {
