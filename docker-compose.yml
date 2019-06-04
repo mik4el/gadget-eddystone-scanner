@@ -5,7 +5,7 @@ services:
     restart: always
     build: .
     env_file: .env
-    command: npm start
+    command: node scan_and_post_eddystone_beacons.js
     privileged: true
     network_mode: "host"
     logging:

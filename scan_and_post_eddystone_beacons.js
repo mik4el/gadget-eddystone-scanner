@@ -23,7 +23,6 @@ setTimeout(function () {
 	console.log('Kill after 60s...'); 
 	process.exit(1);
 }, 60*1000); 
-
 function postBeaconToWebService(beacon) {
 	if (token === null) {
 		console.log("No token...");
